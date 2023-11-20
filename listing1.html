@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Local Storage</title>
+    <script type="text/javascript">
+        const localStorage = window.localStorage;
+        const initialize = () => {
+            if (localStorage) {
+                const count = localStorage.getItem("visitCount") || 0;
+                const newCount = parseInt(count) + 1;
+                localStorage.setItem("visitCount", newCount);
+                updateDOM();
+            }
+        };
+        const updateDOM = () => {
+            const count = localStorage.getItem("visitCount") || 0;
+            document.getElementById(
+                "visitCount"
+            ).innerHTML = Visit count $ {
+                count
+            };
+        };
+    </script>
+</head>
+
+<body></body>
+
+</html>
